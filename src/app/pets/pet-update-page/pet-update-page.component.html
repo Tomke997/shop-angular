@@ -1,0 +1,40 @@
+<form [formGroup]="petForm" (ngSubmit)="update()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="Name">
+  </label>
+
+  <label>
+    Type:
+    <input type="text" formControlName="Type">
+  </label>
+
+  <label>
+    Birth Date:
+    <input type="datetime-local" formControlName="Birthdate">
+  </label>
+
+  <label>
+    Sold Date:
+    <input type="datetime-local" formControlName="SoldDate">
+  </label>
+
+  <label>
+    Color:
+    <input type="text" formControlName="Color">
+  </label>
+
+  <label>
+    Previous Owner:
+    <input type="text" formControlName="PreviousOwner">
+  </label>
+
+  <label>
+    Price:
+    <input type="number" formControlName="Price">
+  </label>
+  <br>
+  <br>
+  <button type="submit">Update</button>
+</form>
