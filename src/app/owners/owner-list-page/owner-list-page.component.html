@@ -1,8 +1,20 @@
-<ul>
-<li *ngFor="let owner of owners">
-  <a routerLink="/owners/{{owner.id}}">{{owner.firstName}} {{owner.lastName}}</a>
-  <button routerLink="/owners-update/{{owner.id}}">Update</button>
-  <button (click)="delete(owner.id)">Delete</button>
-</li>
-</ul>
-<button routerLink="/owners-add">Add new Owner</button>
+<button routerLink="/owners-add" type="button" class="mt-2 ml-3 btn btn-primary">
+  Add new Owner
+</button>
+<div class="ml-2 mr-2 row">
+  <div class="col-4 pl-1 pr-1 mt-2" *ngFor="let owner of owners">
+    <div class="card">
+      <div class="card-body">
+        <a routerLink="/owners/{{owner.id}}">{{owner.firstName}} {{owner.lastName}}</a>
+        <div class="card-body text-right">
+          <button style="background-color: orange" routerLink="/owners-update/{{owner.id}}" type="button" class="ml-1 mr-1 btn btn-primary">
+            Update
+          </button>
+          <button style="background-color: red" (click)="delete(owner.id)" type="button" class="btn btn-primary">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

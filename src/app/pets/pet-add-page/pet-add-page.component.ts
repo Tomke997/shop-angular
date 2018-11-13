@@ -10,6 +10,7 @@ import {Route, Router} from '@angular/router';
   styleUrls: ['./pet-add-page.component.css']
 })
 export class PetAddPageComponent implements OnInit {
+  maxDate = new Date();
   petForm = new FormGroup({
     Name: new FormControl(''),
     Type: new FormControl(''),

@@ -1,40 +1,64 @@
 <form [formGroup]="petForm" (ngSubmit)="createPet()">
 
+  <div class="mt-2 mb-2">
   <label>
     Name:
     <input type="text" formControlName="Name">
   </label>
+  </div>
 
+  <div>
   <label>
     Type:
     <input type="text" formControlName="Type">
   </label>
+  </div>
 
+  <div>
   <label>
     Birth Date:
-    <input type="date" formControlName="Birthdate">
+    <input
+      class="form-control"
+      [maxDate]="maxDate"
+      #dpYMD="bsDatepicker"
+      bsDatepicker
+      formControlName="Birthdate"
+      [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
   </label>
+  </div>
 
+  <div>
   <label>
-    Sold Date:
-    <input type="date" formControlName="SoldDate">
+    Sold Datee
+    <input
+      class="form-control"
+      [maxDate]="maxDate"
+      #dpYMD="bsDatepicker"
+      bsDatepicker
+      formControlName="SoldDate"
+      [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
   </label>
-
+  </div>
+  <div>
   <label>
     Color:
     <input type="text" formControlName="Color">
   </label>
+  </div>
 
+  <div>
   <label>
     Previous Owner:
     <input type="text" formControlName="PreviousOwner">
   </label>
+  </div>
 
+  <div>
   <label>
     Price:
     <input type="number" formControlName="Price">
   </label>
-  <br>
-  <br>
+  </div>
+
   <button type="submit">Save</button>
 </form>

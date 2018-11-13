@@ -1,8 +1,22 @@
-<ul>
-<li *ngFor="let pet of pets">
+<button routerLink="/pets-add" type="button" class="mt-2 ml-3 btn btn-primary">
+  Add new Pet
+</button>
+<div class="ml-2 mr-2 row">
+<div class="col-4 pl-1 pr-1 mt-2" *ngFor="let pet of pets">
+  <div class="card">
+    <div class="card-body">
   <a routerLink="/pets/{{pet.Id}}">{{pet.name}}</a>
-  <button routerLink="/pets-update/{{pet.id}}">Update</button>
-  <button (click)="delete(pet.id)">Delete</button>
-</li>
-</ul>
-<button routerLink="/pets-add">Add new Pet</button>
+      <div class="card-body text-right">
+  <button style="background-color: orange" routerLink="/pets-update/{{pet.id}}" type="button" class="ml-1 mr-1 btn btn-primary">
+    Update
+  </button>
+  <button style="background-color: red" (click)="delete(pet.id)" type="button" class="btn btn-primary">
+    Delete
+  </button>
+  </div>
+    </div>
+  </div>
+</div>
+</div>
+
+

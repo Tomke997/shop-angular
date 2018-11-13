@@ -15,7 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { OwnerUpdatePageComponent } from './owners/owner-update-page/owner-update-page.component';
 import { PetUpdatePageComponent } from './pets/pet-update-page/pet-update-page.component';
 import {HttpClientModule} from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import {BsDatepickerModule, ButtonsModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,13 +30,14 @@ import { LoginComponent } from './login/login.component';
     OwnerAddPageComponent,
     OwnerUpdatePageComponent,
     PetUpdatePageComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
