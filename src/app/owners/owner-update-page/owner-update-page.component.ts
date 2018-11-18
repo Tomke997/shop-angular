@@ -40,7 +40,8 @@ export class OwnerUpdatePageComponent implements OnInit {
 update() {
   const ownerUpdate = this.ownerForm.value;
   ownerUpdate.id = this.ownerId;
-  this.ownerService.updateOwner(ownerUpdate, this.ownerId).subscribe(() => {});
-  this.router.navigateByUrl('/owners');
+  this.ownerService.updateOwner(ownerUpdate, this.ownerId).subscribe(() => {
+    this.router.navigateByUrl('/owners');
+  });
 }
 }

@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class OwnersService {
   id = 1;
-  apiUrl = 'https://localhost:5001/api/owners';
+  apiUrl = 'http://localhost:5000/api/owners';
   constructor(private http: HttpClient) {
   }
   getOwners(): Observable<Owner[]> {

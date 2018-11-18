@@ -16,6 +16,9 @@ import { OwnerUpdatePageComponent } from './owners/owner-update-page/owner-updat
 import { PetUpdatePageComponent } from './pets/pet-update-page/pet-update-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BsDatepickerModule, ButtonsModule} from 'ngx-bootstrap';
+import { LoginComponent } from './login/login/login.component';
+import {AuthenicationService} from './shared/services/authenication.service';
+import {Guard} from './guards/guard';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import {BsDatepickerModule, ButtonsModule} from 'ngx-bootstrap';
     OwnerAddPageComponent,
     OwnerUpdatePageComponent,
     PetUpdatePageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,10 @@ import {BsDatepickerModule, ButtonsModule} from 'ngx-bootstrap';
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    Guard,
+    AuthenicationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@ export class PetListPageComponent implements OnInit {
   constructor(private petService: PetsService) { }
 
   ngOnInit() {
-    this.refresh()
+    this.refresh();
   }
   refresh() {
     this.petService.getPets().subscribe( petList => {
@@ -21,8 +21,8 @@ export class PetListPageComponent implements OnInit {
     });
   }
   delete(id: number) {
-  this.petService.deletePet(id).subscribe(() => {
-    this.refresh();
-  });
+    this.petService.deletePet(id).subscribe(() => {
+      this.refresh();
+    });
   }
 }
