@@ -15,7 +15,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PetsService {
-  apiUrl = 'http://petshopassignment.azurewebsites.net';
+  apiUrl = 'https://localhost:5001/api/pets';
   petsCollection: Pet[];
   constructor(private http: HttpClient, private authenicationService: AuthenicationService) {}
   getPetById(id: number): Observable<Pet> {
