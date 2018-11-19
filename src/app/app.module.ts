@@ -15,10 +15,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { OwnerUpdatePageComponent } from './owners/owner-update-page/owner-update-page.component';
 import { PetUpdatePageComponent } from './pets/pet-update-page/pet-update-page.component';
 import {HttpClientModule} from '@angular/common/http';
-import {BsDatepickerModule, ButtonsModule} from 'ngx-bootstrap';
+import {BsDatepickerModule, BsDropdownModule, ButtonsModule, ModalModule, TabsModule} from 'ngx-bootstrap';
 import { LoginComponent } from './login/login/login.component';
 import {AuthenicationService} from './shared/services/authenication.service';
 import {Guard} from './guards/guard';
+import { RegisterComponent } from './login/register/register.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,17 @@ import {Guard} from './guards/guard';
     OwnerUpdatePageComponent,
     PetUpdatePageComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     ButtonsModule.forRoot(),
+    ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
   ],
   providers: [

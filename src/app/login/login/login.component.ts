@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     Username: new FormControl(''),
     Password: new FormControl(''),
-
   });
 
   constructor(private router: Router, private authenicationService: AuthenicationService) { }

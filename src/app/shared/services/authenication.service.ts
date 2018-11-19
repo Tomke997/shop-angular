@@ -12,7 +12,7 @@ export class AuthenicationService {
   constructor(private http: HttpClient) { }
 
   login(login: Login): Observable<boolean> {
-    return this.http.post<any>('https://localhost:5001/api/tokens', login)
+    return this.http.post<any>('https://petshopassignment.azurewebsites.net/api/tokens', login)
       .pipe(map(response => {
         const token = response && response.token;
         // login successful if there's a jwt token in the response

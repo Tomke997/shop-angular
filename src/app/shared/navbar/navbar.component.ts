@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  items: string[] = [
+    'The first choice!',
+  ];
   constructor() { }
 
   ngOnInit() {
   }
-
 }

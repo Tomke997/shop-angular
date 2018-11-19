@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class OwnersService {
   id = 1;
-  apiUrl = 'https://localhost:5001/api/owners';
+  apiUrl = 'https://petshopassignment.azurewebsites.net/api/owners';
   constructor(private http: HttpClient, private authenicationService: AuthenicationService) {
   }
   getOwners(): Observable<Owner[]> {

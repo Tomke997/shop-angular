@@ -12,6 +12,7 @@ import {PetUpdatePageComponent} from './pets/pet-update-page/pet-update-page.com
 import {OwnerUpdatePageComponent} from './owners/owner-update-page/owner-update-page.component';
 import {LoginComponent} from './login/login/login.component';
 import {Guard} from './guards/guard';
+import {RegisterComponent} from './login/register/register.component';
 
 const routes: Routes = [
   { path: 'pets/:ID', component: PetDetailsPageComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'owners', component: OwnerListPageComponent },
   { path: 'pets', component: PetListPageComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '' }
 ];
 

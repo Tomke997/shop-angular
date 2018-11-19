@@ -1,10 +1,10 @@
 <div *ngIf="owner">
-  <h2>{{owner.id}}</h2>
-  <h2>{{owner.firstName}}</h2>
-  <h2>{{owner.lastName}}</h2>
-  <h2>{{owner.address}}</h2>
-  <h2>{{owner.phoneNumber}}</h2>
-  <h2>{{owner.pet}}</h2>
+  <h2>{{owner.firstName}} {{owner.lastName}}</h2>
+  <h2>Address: {{owner.address}}</h2>
+  <h2>Phone Number: {{owner.phoneNumber}}</h2>
+  <div *ngIf="owner.pet">
+    <h2>Pets Name: {{owner.pet.name}}</h2>
+  </div>
 </div>
 <div *ngIf="!owner">
   <h2>Owner not found</h2>
