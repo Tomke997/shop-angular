@@ -20,11 +20,91 @@
     <input type="text" formControlName="PhoneNumber">
   </label>
 
-  <label>
+  <div>
     Pet:
-    <input type="text" formControlName="Pet">
-  </label>
+    <div class="btn-group" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-basic" name="select">
+        <span *ngIf="selectedPet">{{selectedPet.name}}</span>
+        <span *ngIf="!selectedPet">Select Pet</span>
+        <span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem" *ngFor="let pet of pets"><a class="dropdown-item" (click)="setPet(pet)" >{{pet.name}}</a></li>
+        <li><button type="button" class="btn btn-primary dropdown-item" (click)="openModal(template)">Create template modal</button></li>
+        <li role="menuitem"><a class="dropdown-item" (click)="setPet(null)" >Nothing</a></li>
+      </ul>
+    </div>
+  </div>
   <br>
   <br>
   <button type="submit">Update</button>
 </form>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Pet</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="petForm" (ngSubmit)="createPet()">
+
+      <div class="mt-2 mb-2">
+        <label>
+          Name:
+          <input type="text" formControlName="Name">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Type:
+          <input type="text" formControlName="Type">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Birth Date:
+          <input
+            class="form-control"
+            [maxDate]="maxDate"
+            #dpYMD="bsDatepicker"
+            bsDatepicker
+            formControlName="Birthdate"
+            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Sold Date
+          <input
+            class="form-control"
+            [maxDate]="maxDate"
+            #dpYMD="bsDatepicker"
+            bsDatepicker
+            formControlName="SoldDate"
+            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
+        </label>
+      </div>
+      <div>
+        <label>
+          Color:
+          <input type="text" formControlName="Color">
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Price:
+          <input type="number" formControlName="Price">
+        </label>
+      </div>
+      <button type="submit" (click)="modalRef.hide()">Save</button>
+    </form>
+  </div>
+</ng-template>

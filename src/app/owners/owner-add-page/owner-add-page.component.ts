@@ -19,7 +19,6 @@ ownerForm = new FormGroup({
   LastName: new FormControl(''),
   Address: new FormControl(''),
   PhoneNumber: new FormControl(''),
-  Pet: new FormControl('')
 });
   maxDate = new Date();
   petForm = new FormGroup({
